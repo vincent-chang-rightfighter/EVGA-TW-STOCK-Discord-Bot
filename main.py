@@ -73,8 +73,7 @@ async def EVGA(ctx):
                             ), value="https://tw.evga.com"+product.find(title="View Details").get('href'), inline=False)
                             i += 1
                             print(len(embed))
-
-                        if i >= 14:
+                        elif i >= 14:
                             # print(i)
                             embed2.add_field(name=model_name_split[0]+"\nNT$ "+product.find(class_="pl-grid-price").strong.get_text(
                             ), value="https://tw.evga.com"+product.find(title="View Details").get('href'), inline=False)
