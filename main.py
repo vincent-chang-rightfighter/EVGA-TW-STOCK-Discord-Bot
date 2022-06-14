@@ -66,6 +66,7 @@ async def EVGA(ctx):
     message = await ctx.send(f"載入中...\U0001F6F0")
     if await crawler() is "error":
         await ctx.send("程式或EVGA伺服器異常\u2049\uFE0F")
+        item_list.clear()
         print("error")
 
     else:
@@ -82,6 +83,7 @@ async def EVGA(ctx):
             print(len(embed))
 
             await message.edit(content="存貨列表\U0001F389", embed=embed)
+            item_list.clear()
             print("send success,item_list <=11")
 
         elif len(item_list) > 11:
@@ -105,6 +107,7 @@ async def EVGA(ctx):
                               icon_url='https://raw.githubusercontent.com/vincent-chang-rightfighter/DiscordWebhook-InstagramUrl/main/icon.png')
             await message.edit(content="存貨列表\U0001F389", embed=embed)
             await ctx.send(embed=embed2)
+            item_list.clear()
             print("send success,item_list >11")
 
 bot.run('YOUR Discord bot tokem')
