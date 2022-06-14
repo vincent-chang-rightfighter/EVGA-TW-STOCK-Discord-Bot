@@ -47,6 +47,7 @@ async def on_ready():
     await bot.change_presence(activity=game, status=discord.Status.online)
 
 
+@bot.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandOnCooldown):
         print("cooldown")
