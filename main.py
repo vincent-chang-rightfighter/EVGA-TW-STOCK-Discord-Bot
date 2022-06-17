@@ -94,11 +94,11 @@ async def EVGA(ctx):
             embed2.colour = discord.Colour.dark_green()
             i = 0
             for item in item_list:
-                if i <= 11:
+                if i < 11:
                     embed.add_field(
                         name=item['name']+"\nNT$ "+item['price'], value=item['url'], inline=False)
                     i += 1
-                elif i > 11:
+                elif i >= 11:
                     embed2.add_field(
                         name=item['name']+"\nNT$ "+item['price'], value=item['url'], inline=False)
                     i += 1
