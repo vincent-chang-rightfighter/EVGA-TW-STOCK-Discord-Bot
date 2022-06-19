@@ -1,17 +1,20 @@
+import os
 import discord
 from discord.ext import commands
 from datetime import datetime, timezone, timedelta
 from bs4 import BeautifulSoup
 import requests
 from operator import itemgetter
+from dotenv import load_dotenv
+load_dotenv()
 
 headers = {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.60 Safari/537.36'}
 
 item_list = []
 bot = commands.Bot(command_prefix='-')
-channel_id = 000000000000000000
-
+channel_id = os.getenv("CHANNEL_ID")
+bot_token = os.getenv("BOT_TOKEN")
 
 async def crawler():
     res = requests.get(
@@ -111,4 +114,4 @@ async def EVGA(ctx):
             item_list.clear()
             print("send success,item_list >11")
 
-bot.run('YOUR Discord bot tokem')
+bot.run(bot_token)
