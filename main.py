@@ -114,4 +114,5 @@ async def EVGA(ctx):
             item_list.clear()
             print("send success,item_list >11")
 
-bot.run(bot_token)
+if __name__ == '__main__':
+    bot.run(bot_token)
